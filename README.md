@@ -77,7 +77,8 @@ to the top right of the `div`, using [`position: absolute`](http://learnlayout.c
 ```
 * Use your block grid from the responsive css workshop to make this image gallery responsive, with 4 images per row on desktop, 3 on tablet and 2 on mobile
 * **NOTE**: The images each have a different size, on purpose. *Make sure you fix this with CSS* by making all the images have a consistent width! Hint: you can do this by making the images be the full width of their parent, or using your `responsive-img` class from the responsive css workshop.
-* Using jQuery, make it so that when the user clicks on an image, an overlay will appear on the page, and a copy of the clicked image will appear at the center of the overlay
+* Since you are going to make your images clickable, it would be nice to let the user know that they are clickable. Normally when an element is clickable, the cursor changes to a pointer. However because images are not normally clickable, the pointer will stay the default arrow. Using the CSS [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) property, make the images appear clickable by choosing the appropriate cursor type.
+* Using jQuery, make it so that when the user clicks on an image, an overlay will appear on the page, and a copy of the clicked image will appear at the center of the overlay. Note that this is a custom overlay, not an `alert` or anything built-in.
 * In addition to the image, there should be a paragraph below the image that contains the text in the `alt` attribute of the image
 * The end result should look something like this:
 
@@ -113,7 +114,36 @@ And the HTML for it should look like this:
 </div>
 ```
 
-## Exercise 3: playing with forms
+## Exercise 3: integrating a plugin
+* Add the following code to your HTML page:
+```html
+<div>
+  <aside>
+    <form action="/email-signup" method="POST">
+      <h2>Mailing List</h2>
+      <div><input type="text" placeholder="Your Email"></div>
+      <div><button>Join mailing list</button></div>
+    </form>
+  </aside>
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, atque, veniam corporis aut accusamus placeat voluptate modi sit nemo possimus voluptatibus repellat fuga quisquam vel soluta! Sed, ea debitis iure.
+    </p>
+    <p>
+      Doloribus sunt corrupti excepturi expedita provident vero unde itaque ipsa sapiente qui. Ipsum, facere, iure, molestiae, voluptatibus aliquam assumenda magnam suscipit aperiam dolor porro iste deleniti. Eum, porro animi assumenda.
+    </p>
+    <!-- ADD ENOUGH PARAGRAPHS SO THAT THE PAGE SCROLLS -->
+  </div>
+</div>
+```
+* Make sure to add enough paragraphs so that the page can scroll
+* Using CSS, display the form on the left of the text. Give the form 30% width and the text the rest.
+* Using CSS, style the form so that it has a nice border, nice padding. Also style the elements inside the form. [This MDN article on form styling](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Styling_HTML_forms) could help you to do that.
+* Look at the page for [jQuery sticky plugin](http://stickyjs.com/)
+* Integrate jQuery sticky on your page so that as the user scrolls, the form stays at the top.
+* As jQuery sticky does its job, notice that your form might look distorted. You can fix this by adding a wrapper around the form.
+
+## Exercise 4: playing with forms
 * Add the following code to your HTML page:
 ```html
 <form id="signup-form">
@@ -140,7 +170,7 @@ $('#signup-form').on('submit', function(event) {
 * If the validation passes, then let the form submit normally by NOT calling `preventDefault`.
 * If the validation fails, prevent the form from submitting and display an `alert` to the user telling them what went wrong
 
-## Exercise 4: discovering AJAX
+## Exercise 5: discovering AJAX
 * Add the following code to your HTML page:
 ```html
 <h1>Welcome to my blog!</h1><article>
@@ -187,7 +217,7 @@ jQuery.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=montre
 * Use some CSS to style the added content, by giving it a border, padding and anything else you deem valuable.
 * **Hint**: You will need to use [`jQuery.fn.after`](https://api.jquery.com/after/) to add a new element after the title of the page
 
-## Exercise 5: Real-time ISS!
+## Exercise 6: Real-time ISS!
 * Add the following HTML to your page:
 ```html
 <h1>Look at the ISS live!</h1>
