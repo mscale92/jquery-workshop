@@ -1,13 +1,9 @@
-# jQuery Workshop!
-*I have no witty tagline for this one...*
+# jQuery Workshop #1
 
 ## Basic instructions
-* Every exercise should be done in a separate branch, branched off **master**.
-* Create a pull request for each completed exercise
-* Start with the basic skeleton provided to you, which consists of an `index.html` file and a `javascript` directory with `app.js`,
-as well as a `css` directory with `app.css`.
+* Every exercise should be done in a separate branch. Always go back to **master** before creating a new branch.
+* Start with the basic skeleton provided to you, which consists of an `index.html` file and a `javascript` directory with `app.js`, as well as a `css` directory with `app.css`.
 * Add any new HTML to `index.html`, any new styles to `app.css` and any JavaScript/jQuery code to `app.js`.
-* **NOTE**: Even though there's a CSS file in there, nothing prevents you from using SASS if you wish :)
 
 ## Exercise 1: hiding/showing announcements
 * Add the following code to your HTML file:
@@ -53,16 +49,12 @@ as well as a `css` directory with `app.css`.
     <p>Eius, assumenda, culpa commodi deserunt sequi mollitia illo praesentium cumque? Ratione, dolorum molestias officia voluptate aperiam explicabo totam. Rem, assumenda, nulla at quos odit temporibus reiciendis sapiente alias maxime fuga.</p>
 </div>
 ```
-* Using some CSS, style the `announcement` divs to give them a border, background color and some padding
-* Using jQuery, add an "X" button to every element that has the class `announcement`
-* Use some CSS to style this button (hint: change the `border` property so the button looks more flat), as well as make it appear 
-to the top right of the `div`
-* Using jQuery, make it so that if the button is clicked, the content of the announcement is hidden, and the text of the button
-changes from "X" to "show announcement"
-* If the button is clicked again, the announcement content should re-appear and the behaviour can be repeated as many times as 
-needed
-* **Hint**: In addition to the functions that we looked at in the demo, you might need to use
-[`jQuery.fn.text`](http://api.jquery.com/text/)
+* Using CSS, style the `announcement` divs to give them a border, background color and padding of your choice
+* Using jQuery's `append` method, add an "X" button to every element that has the class `announcement`
+* Use CSS to style this button (hint: change the `border` property so the button looks flat), as well as make it appear 
+to the top right of the `div`, using [`position: absolute`](http://learnlayout.com/position.html)
+* Using jQuery, make it so that if the button is clicked, the content of the announcement is hidden, and the text of the button changes from "X" to "show announcement". Hint: you can do this with two buttons. Hint #2: remember what was said in class about using classes versus trying to change CSS properties with jQuery directly.
+* If the button "show announcement" is clicked, the announcement content should re-appear and the behaviour can be repeated as many times as needed.
 
 ## Exercise 2: image gallery
 * Add the following code to your HTML page:
@@ -83,10 +75,9 @@ needed
     <li><img src="http://placekitten.com/g/433/433" alt="Kitty ALL THE THINGS!"></li>
 </ul>
 ```
-* Using some CSS, make this look a bit like an image gallery. Doesn't need to be responsive, but perhaps 4 elements per row would
-be nice. If you want to go overboard and make it responsive, please go ahead! It would be good practice anyway.
-* **NOTE**: The images each have a different size, on purpose. *Make sure you fix this with CSS* by making all the images have a consistent width! Hint: you can do this by making the images be the full width of their parent `li`
-* Using jQuery, make it so that when the user clicks on an image, an overlay will appear on the page, and the clicked image will appear at the center of the overlay
+* Use your block grid from the responsive css workshop to make this image gallery responsive, with 4 images per row on desktop, 3 on tablet and 2 on mobile
+* **NOTE**: The images each have a different size, on purpose. *Make sure you fix this with CSS* by making all the images have a consistent width! Hint: you can do this by making the images be the full width of their parent, or using your `responsive-img` class from the responsive css workshop.
+* Using jQuery, make it so that when the user clicks on an image, an overlay will appear on the page, and a copy of the clicked image will appear at the center of the overlay
 * In addition to the image, there should be a paragraph below the image that contains the text in the `alt` attribute of the image
 * The end result should look something like this:
 
@@ -95,8 +86,10 @@ be nice. If you want to go overboard and make it responsive, please go ahead! It
 ![overlay](https://i.imgur.com/8TDZ8HD.png)
 
 * **Hint**: in addition to all jQuery functions you have learned so far, you will need to use
-[`jQuery.fn.attr`](http://api.jquery.com/attr/)
-* **Hint #2**: here is some example code to style your overlay:
+[`jQuery.fn.attr`](http://api.jquery.com/attr/) to grab the `src` and `alt` properties of the image that was clicked.
+
+* **Hint #2**: here is some code for your overlay:
+
 ```css
 .overlay {
     position: fixed;
@@ -111,8 +104,16 @@ be nice. If you want to go overboard and make it responsive, please go ahead! It
     flex-direction: column;
 }
 ```
+And the HTML for it should look like this:
 
-## Exercise 3: discovering forms
+```html
+<div class="overlay">
+  <img src=""><!-- the src of this image will be filled in by jQuery when an image is clicked -->
+  <p class="image-caption"><!-- the text of this P will be filled in by jQuery when an image is clicked --></p>
+</div>
+```
+
+## Exercise 3: playing with forms
 * Add the following code to your HTML page:
 ```html
 <form id="signup-form">
@@ -122,7 +123,7 @@ be nice. If you want to go overboard and make it responsive, please go ahead! It
     <div><button type="submit">Signup!</button></div>
 </form>
 ```
-* Click the Signup button and notice that it tries to submit the form by reloading the page
+* Click the Signup button and notice that the browser tries to submit the form by reloading the page
 * For this exercise, we want to do some basic checking before submitting the form
 * Add an onSubmit event handler to the form using the following code:
 ```javascript
@@ -136,7 +137,7 @@ $('#signup-form').on('submit', function(event) {
 * Make the following validation on the fields:
   1. The password should be at least 10 characters
   2. The password and confirm password should be the same
-* If the validation passes, then let the form submit normally
+* If the validation passes, then let the form submit normally by NOT calling `preventDefault`.
 * If the validation fails, prevent the form from submitting and display an `alert` to the user telling them what went wrong
 
 ## Exercise 4: discovering AJAX
@@ -182,12 +183,11 @@ jQuery.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=montre
 	}
 )
 ```
-* Using this example as well as any other examples you can find, retrieve the position of the ISS, and add it to the page
-**below the title of the article**.
-* Use some CSS to style the added content and make it look nice.
-* **Hint**: You will need to use [`jQuery.fn.after`](https://api.jquery.com/after/) in addition to everything else you know.
+* Using the `getJSON` function of jQuery, retrieve the position of the ISS, and add it to the page **below the title of the article**.
+* Use some CSS to style the added content, by giving it a border, padding and anything else you deem valuable.
+* **Hint**: You will need to use [`jQuery.fn.after`](https://api.jquery.com/after/) to add a new element after the title of the page
 
-## Exercise 5: Challenge: Real-time ISS!
+## Exercise 5: Real-time ISS!
 * Add the following HTML to your page:
 ```html
 <h1>Look at the ISS live!</h1>
@@ -195,8 +195,8 @@ jQuery.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=montre
 ```
 * Read about [Google Static Maps API](https://developers.google.com/maps/documentation/static-maps/intro)
 * Using jQuery and AJAX, find out the position of the ISS, and change the `src` of the image to be a google maps static image
-* The image should be centered where the ISS is, and there should be a marker. Bonus points if you can put a custom marker!
+* The image should be centered where the ISS is, and there should be a marker. Bonus points if you can put a custom marker -- read that documentation!!
 * Using the [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) function, call your
-code every once in a while to get a different map from Google.
-* **NOTE**: Make sure you get an API key, because you'll be calling the Google Maps API quite often! I wouldn't suggest going
-less than 30 seconds, and even then you might get limited by Google!
+code repeatedly to get a new ISS position, then update the `src` of the image based on that.
+* **NOTE**: Make sure you get an API key, because you'll be calling the Google Maps API quite often!
+* **NOTE**: To limit the calls you make to the Google Maps API, don't use setInterval from the start. First make sure that your code is working well by calling your function only once. When you feel that your code is working, activate the `setInterval` and set it to a low value to admire your hard work :)
