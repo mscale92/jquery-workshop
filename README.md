@@ -143,6 +143,15 @@ And the HTML for it should look like this:
 * Integrate jQuery sticky on your page so that as the user scrolls, the form stays at the top.
 * As jQuery sticky does its job, notice that your form might look distorted. You can fix this by adding a wrapper around the form.
 
+## Exercise 3B: Making it responsive
+On mobile devices, displaying the form next to the text is ridiculously unfriendly. We want to do this only if the screen size is medium or more, using our 641px+ media query from the CSS responsive workshop. The difference here is that we not only need to check for the screen size in our CSS, but also in our JS code. If the form and the text are stacked as they should be on mobile devices, then there's no need to make the form sticky.
+
+1. Make sure that the form and the text are stacked on mobile devices by using a media query
+2. Read this tutorial on [using media queries in JavaScript](https://www.sitepoint.com/javascript-media-queries/)
+3. Implement a solution so that the form will be sticky only on the right screen size, using the `mq.matches` method with an `if/else`
+4. Test your solution by refreshing your page at different screen sizes.
+5. Once your solution works, take it to the next level by implementing the `mq.addEventListener` callback. Sometimes a person will change the size of their browser while being on your site, and you want to react accordingly. If the screen size becomes too small, you want to undo the jQuery stickiness. Look at the [stickyjs documentation on GitHub](https://github.com/garand/sticky) to figure out how to "un-sticky" an object.
+
 ## Exercise 4: playing with forms
 * Add the following code to your HTML page:
 ```html
