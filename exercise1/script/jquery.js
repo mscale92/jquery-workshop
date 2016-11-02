@@ -1,5 +1,5 @@
 var $ = $;
 
 $(document).ready(function(){
-    $('.announcement').append('X');
+    $('.announcement').append('<button>X</button>');
 })
