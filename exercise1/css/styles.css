@@ -20,5 +20,15 @@ button{
     position: absolute;
     top: 0;
     right: 0;
+    /*z-index: 10;*/
+}
+
+.show{
+    background: pink;
     z-index: 10;
 }
+
+.hide{
+    background: green;
+}
+
