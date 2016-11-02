@@ -5,6 +5,13 @@
 * Start with the basic skeleton provided to you, which consists of an `index.html` file and a `javascript` directory with `app.js`, as well as a `css` directory with `app.css`.
 * Add any new HTML to `index.html`, any new styles to `app.css` and any JavaScript/jQuery code to `app.js`.
 
+## Resources
+* [jQuery API documentation](http://api.jquery.com/)
+* [Intro to jQuery from Udacity](https://www.udacity.com/course/intro-to-jquery--ud245)
+* [AJAX with jQuery from Udacity](https://www.udacity.com/course/intro-to-ajax--ud110)
+
+At some point during your studies you should watch the two video series from Udacity. Start with the intro course and move on to the AJAX course.
+
 ## Exercise 1: hiding/showing announcements
 * Add the following code to your HTML file:
 ```html
