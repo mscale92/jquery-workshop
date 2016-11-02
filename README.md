@@ -75,7 +75,7 @@ to the top right of the `div`, using [`position: absolute`](http://learnlayout.c
     <li><img src="http://placekitten.com/g/433/433" alt="Kitty ALL THE THINGS!"></li>
 </ul>
 ```
-* Use your block grid from the responsive css workshop to make this image gallery responsive, with 4 images per row on desktop, 3 on tablet and 2 on mobile
+* Use your block grid from the responsive css workshop to make this image gallery responsive, with 4 images per row on desktop, 3 on tablet and 2 on mobile. If you did not complete the responsive block grid from the responsive CSS workshop, then go back and complete it now before continuing this exercise.
 * **NOTE**: The images each have a different size, on purpose. *Make sure you fix this with CSS* by making all the images have a consistent width! Hint: you can do this by making the images be the full width of their parent, or using your `responsive-img` class from the responsive css workshop.
 * Since you are going to make your images clickable, it would be nice to let the user know that they are clickable. Normally when an element is clickable, the cursor changes to a pointer. However because images are not normally clickable, the pointer will stay the default arrow. Using the CSS [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) property, make the images appear clickable by choosing the appropriate cursor type.
 * Using jQuery, make it so that when the user clicks on an image, an overlay will appear on the page, and a copy of the clicked image will appear at the center of the overlay. Note that this is a custom overlay, not an `alert` or anything built-in.
