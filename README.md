@@ -1,7 +1,7 @@
 # jQuery Workshop #1
 
-## Basic instructions
-* Every exercise should be done in a separate branch. Always go back to **master** before creating a new branch.
+## Instructions
+* Every exercise should be done in a separate branch. :warning: **Always go back to master before creating a new branch.** :warning
 * Start with the basic skeleton provided to you, which consists of an `index.html` file and a `javascript` directory with `app.js`, as well as a `css` directory with `app.css`.
 * Add any new HTML to `index.html`, any new styles to `app.css` and any JavaScript/jQuery code to `app.js`.
 
