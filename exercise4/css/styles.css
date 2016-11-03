@@ -4,3 +4,8 @@ progress,sub,sup{vertical-align:baseline;}button,hr,input{overflow:visible;}html
 
 html{box-sizing:border-box;}*,*:before,*:after{box-sizing:inherit;}
 
+
+
+body{
+    background: lightgreen;    
+}
