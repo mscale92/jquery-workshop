@@ -6,17 +6,17 @@ html{box-sizing:border-box;}*,*:before,*:after{box-sizing:inherit;}
 
 .flex-parent{
     display: flex;
-    
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 aside{
-    width: 30%;
-    
     flex-flow: column;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 form#sticker{
+    max-height: 148px;
     min-width: 300px;
     margin: 0 auto;
     border: 4px solid aliceblue;
@@ -30,4 +30,26 @@ aside h2{
 div#sticker-sticky-wrapper.sticky-wrapper{
     display: flex;
     justify-content: center;
+}
+
+
+ /*grid below*/
+ 
+
+.col-small-12{
+    width: 100%;
+}
+
+@media(min-width: 641px){
+    .col-med-4{
+        width: 30%;
+    }
+    
+    .col-med-8{
+        width: 70%;
+    }
+    
+    .flex-parent{
+        flex-flow: row;
+    }
 }
