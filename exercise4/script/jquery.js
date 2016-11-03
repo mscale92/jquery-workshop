@@ -12,7 +12,9 @@
      
      if(pass1.length >= 10){
        if(pass1 === pass2){
-         
+        alert("Success!");
+         $(this).off('submit').submit();
+          //if all goes well, submit the form!
        }
        else{
         alert("Passwords must match!");
