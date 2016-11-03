@@ -4,9 +4,3 @@ progress,sub,sup{vertical-align:baseline;}button,hr,input{overflow:visible;}html
 
 html{box-sizing:border-box;}*,*:before,*:after{box-sizing:inherit;}
 
-
-.announcement{
-    background: lightblue;
-    border: 2px solid blue;
-    padding: 4em 2em;
-}
