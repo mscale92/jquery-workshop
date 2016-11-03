@@ -4,3 +4,36 @@ progress,sub,sup{vertical-align:baseline;}button,hr,input{overflow:visible;}html
 
 html{box-sizing:border-box;}*,*:before,*:after{box-sizing:inherit;}
 
+
+body{
+    background: lightgreen;
+}
+
+article{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+article p{
+    max-width: 80%;
+    
+}
+
+article p:first-child,
+h2,
+h1{
+    text-align: center;
+}
+
+article p span:nth-child(odd){
+    color: darkgreen;
+}
+
+article span{
+    margin: 0 auto;
+    color: navy;
+}
